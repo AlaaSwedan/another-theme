@@ -1,0 +1,134 @@
+
+html , body{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *:before, *:after ,body{
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+
+.test-container {
+    box-sizing: border-box;
+    margin: 0 auto 0;
+    max-width: 1180px;
+    min-width: 100% !important;
+    width: 100%;
+}
+
+.main-width{
+	min-width: 100% !important;
+}
+
+.header-global .user .settings-language-form .language-selector {
+    width: 74px;
+    margin-left: 0;
+    font-size: 12px;
+    position: relative;
+    bottom: 4px;
+}
+
+
+.header-global .user{
+	position: relative;
+    bottom: 8px;
+}
+
+.top-bar-new {
+    height: 20px;
+    padding: 8px 44px 30px 0;
+}
+
+.header-global{
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+
+
+.dashboard .my-courses .wrapper-header-courses{
+    text-align: center !important;
+    font-family: 'DroidKufi' !important;
+}
+
+.empty-dashboard-message a{
+    font-family: 'DroidKufi' !important;
+}
+
+.wrapper-msg .msg-content .title{
+    font-family: 'DroidKufi' !important;
+}
+
+.wrapper-msg.urgency-high{
+    background: #0079bc !important;
+}
+
+.wrapper-msg .msg-content .copy p{
+    font-family: 'DroidKufi' !important;
+}
+
+.dashboard .my-courses .wrapper-header-courses .header-courses{
+    font-family: 'DroidKufi' !important;
+}
+
+.dashboard .my-courses{
+     text-align: center !important;
+     display: inline !important;
+     font-family: 'DroidKufi' !important;
+     width: 100% !important;
+}
+
+.empty-dashboard-message p{
+     margin-bottom: 40px !important;
+     padding-top: 10px !important;
+}
+
+#content{
+    margin: 0 !important;
+    padding: 65px 0 !important;
+}
+
+#main {
+    margin-top: 36px !important;
+}
+
+.course-info header.course-profile .intro-inner-wrapper{
+      min-width: auto !important;
+}
+
+#sticky-wrapper-sticky-wrapper{
+   height: 105px !important;
+}
+       
+.overlay{
+      background: none !important;
+}
+
+
+.course-info .course-sidebar header::after{
+    top: 140px !important;
+
+}
+
+.dropdown-item ,.animsition-link{
+    color: #fff !important;
+    font-family: 'DroidKufi' !important;
+    text-decoration: none !important;
+  }
+
+ #navigation > ul > li > a{
+    color: #66707f !important;
+  }
+
+
+.logo-2-2{
+  position: absolute;
+  right: 470px;
+  width: 135px !important;
+  max-width: 135px !important; 
+}
+
+

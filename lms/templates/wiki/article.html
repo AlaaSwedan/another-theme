@@ -1,0 +1,179 @@
+{% extends "wiki/base.html" %}
+{% load wiki_tags i18n %}
+
+{% block pagetitle %}{{ article.current_revision.title }}{% endblock %}
+
+{% block wiki_breadcrumbs %}
+{% include "wiki/includes/breadcrumbs.html" %}
+{% endblock %}
+
+{% block wiki_contents %}
+<script type="text/javascript">
+
+$(function(){
+  //to change logo in arabic and english
+  var lang = $("#settings-language-value").val();
+  
+
+   if(lang == "en")
+  {
+    
+    $("body").removeClass("text-right").addClass("text-left");
+
+  }
+  else{
+    $("body").removeClass("text-left").addClass("text-right");
+
+  }
+ 
+   if(lang == "en")
+  {
+    
+    $("sticky-wrapper-sticky-wrapper").removeClass("text-right").addClass("text-left");
+
+  }
+  else{
+    $("sticky-wrapper-sticky-wrapper").removeClass("text-left").addClass("text-right"); 
+
+  }
+
+
+   if(lang == "en")
+  {
+    
+    $(".wrapper-course-material .course-tabs li").removeClass("align-right").addClass("align-left");
+
+  }
+  else{
+    $(".wrapper-course-material .course-tabs li").removeClass("align-left").addClass("align-right");
+
+  }
+
+
+   if(lang == "en")
+  {
+    
+    $("#navigation > ul > li").removeClass("align-right").addClass("align-left");
+      $(".logo-left").removeClass("new-image-float ").addClass("align-left");
+
+    $(".new-image-float").removeClass("new-col-width").addClass("new-col-2-width");
+
+
+  }
+  else{
+    $("#navigation > ul > li").removeClass("align-left").addClass("align-right");
+   $(".new-image-float").removeClass("float").addClass("align-right");
+
+    $(".new-image-float").removeClass("col-md-7").addClass("new-col-3-width");
+    $(".logo-left").removeClass("col-md-7").addClass("new-col-4-width");
+
+  }
+
+ if(lang=="en")
+  {
+    $("#arImg").hide();
+    $("#enImg").show();
+
+  }
+  else{
+    $("#arImg").show();
+    $("#enImg").hide();
+  }
+
+
+
+});
+</script>
+<style type="text/css">
+  .wiki-wrapper section.wiki .breadcrumbs-header{
+    height: 88px !important;
+  }
+
+  .header-global.slim{
+    padding: 0 0 10px 0 !important;
+  }
+
+  .dropdown-item{
+    color: #fff !important;
+    text-decoration: none !important;
+  }
+
+  .header-global .user .settings-language-form .language-selector{
+    bottom: 8px !important;
+  }
+
+  .text-left{
+    text-align: left !important;
+  }
+
+    .text-right{
+    text-align: right !important;
+  }
+
+  .align-left{
+      float: left !important;
+  }
+
+    .align-right{
+      float: right !important;
+  }
+
+  .new-image-float{
+    float: right !important;
+  }
+
+
+  .new-col-width{
+    width: 33% !important;
+  }
+
+
+  .new-col-2-width{
+    width: 70% !important;
+  }
+  .new-col-3-width{
+    width: 49% !important;
+  }
+  .new-col-4-width{
+    width: 27% !important;
+  }
+
+</style>
+
+  <div class="article-wrapper">
+
+    <article class="main-article" id="main-article">
+        {% if selected_tab != "edit" %}
+          <h3 class="entry-title">{{ article.current_revision.title }}</h3>
+
+        {% endif %}
+
+        {% block wiki_contents_tab %}
+        {% wiki_render article %}
+        {% endblock %}
+    </article>
+
+    <div class="article-functions">
+      <ul class="nav nav-tabs">
+        {% include "wiki/includes/article_menu.html" %}
+      </ul>
+      <div class="timestamp">
+        <span class="label">{% trans "Last modified:" %}</span><br />
+        <span class="date">{{ article.current_revision.modified }}</span>
+      </div>
+
+      {% if urlpath %}
+      <div class="see-children">
+        <a href="{% url 'wiki:dir' path=urlpath.path %}">{% trans "See all children" %}</a>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+
+
+{% endblock %}
+
+{% block footer_prepend %}
+  <p><em>{% trans "This article was last modified:" %} {{ article.current_revision.modified }}</em></p>
+{% endblock %}
